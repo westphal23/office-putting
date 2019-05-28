@@ -61,7 +61,15 @@ class Officehole{
     {
       x1+=xspeed;
     }
-   
+  }
+   void mousePressed(){
+     if(mousePressed){
+       //x1+=xspeed;
+       xspeed=0;       
+   }else{
+     Oh.move();
+   }
+     
     
   
 }

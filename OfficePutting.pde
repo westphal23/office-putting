@@ -7,5 +7,8 @@ void setup(){
 void draw(){
   background(150);
   Oh.display();
-  Oh.move();  
+  Oh.move(); 
+  //noStroke();
+  Oh.mousePressed();
+  
 }
