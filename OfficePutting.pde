@@ -10,5 +10,6 @@ void draw(){
   Oh.move(); 
   //noStroke();
   Oh.mousePressed();
+  Oh.mousePressed2();
   
 }
