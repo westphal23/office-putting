@@ -12,8 +12,8 @@ void move(){
     {
       x1+=xspeed;
     }
+}
    
     
   
-}
 }
