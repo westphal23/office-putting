@@ -2,8 +2,8 @@ class Officehole {
   float x;
   float y;
   float x1;
-  float xspeed=5;
-  boolean bounce;  
+  int xspeed=5;
+  boolean bounce;   
 
   public Officehole(float x, float y) {
     this.x=x;
@@ -34,17 +34,17 @@ class Officehole {
     rect(295, 5, 10, 150);
     //LineRect
     fill(0, 250, 0);
-    rect(480, 650, 30, 40);
+    rect(480, 650, 30, 40); //green
     fill(244, 232, 0);
-    rect(450, 650, 30, 40);
+    rect(450, 650, 30, 40); //yellowleft
     fill(244, 232, 0);
-    rect(510, 650, 30, 40);
+    rect(510, 650, 30, 40); //yellowright
     fill(255, 0, 0);
-    rect(540, 650, 30, 40);
+    rect(540, 650, 30, 40); //redright
     fill(255, 0, 0);
-    rect(420, 650, 30, 40);
+    rect(420, 650, 30, 40); //redleft
     fill(0);
-    rect(x1, 650, 10, 40);
+    rect(x1, 650, 10, 40);//black meter
   } 
   void move() {  
     if (x1>=560 && bounce!=true) {
@@ -58,18 +58,24 @@ class Officehole {
     {
       x1+=xspeed;
     }
+  } 
+  int getSpeed() {
+    return xspeed;
   }
-  void mousePressed() {
-    if (mousePressed) {      
-      xspeed=0;    
-    }
-    //if(!mousePressed){
-    //  xspeed=5;
-    //}
+  void setSpeed(int s) {
+    xspeed=s;
   }
-  void mousePressed2(){
-     if(!mousePressed){
-      xspeed=5;
+  void putt() {
+    if (x1>=420 && x1<=450) {
+      
+    } else if (x1>=451 && x1<=480) {
+      
+    } else if (x1>=481 && x1<=510) {
+      
+    } else if (x1>=511 && x1<=540) {
+      
+    } else if (x1>=541 && x1<=570) {
+      
     }
   }
   

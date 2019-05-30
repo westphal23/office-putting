@@ -1,15 +1,27 @@
 Officehole Oh;
-void setup(){
-  size(600,1200);
-  Oh=new Officehole(200,150);
+float xspeed=5;
+void setup() {
+  size(600, 1200);
+  Oh=new Officehole(200, 150);
 }
 
-void draw(){
+void draw() {
   background(150);
   Oh.display();
   Oh.move(); 
   //noStroke();
-  Oh.mousePressed();
-  Oh.mousePressed2();
-  
+}
+void mousePressed() { 
+  Oh.setSpeed(0);
+  Oh.putt();
+}
+//if(!mousePressed){
+//  xspeed=5;
+//} 
+void keyPressed() {
+  if (key==CODED) {
+    if (keyCode == UP) {
+      xspeed=5;
+    }
+  }
 }
