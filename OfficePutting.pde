@@ -12,19 +12,15 @@ void draw() {
   Oh.display();
   Oh.move(); 
   //noStroke();  
+  Oh.ball();
   
 
 }
 void mousePressed() { 
   Oh.setSpeed(0);
-  Oh.putt();
-  Oh.ball();
-  
+  Oh.putt();  
   
 }
-//if(!mousePressed){
-//  xspeed=5;
-//} 
 void keyPressed() {
   if (key==CODED) {
     if (keyCode == DOWN){

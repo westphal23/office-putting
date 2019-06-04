@@ -4,7 +4,7 @@ class Officehole {
   float x1;
   int xspeed=5;
   boolean bounce; 
-  int yspeed=3;
+  int yspeed=7;
   int y1=670;
   boolean P;
 
@@ -69,45 +69,62 @@ class Officehole {
   void setSpeed(int s) {
     xspeed=s;
   }
-  void putt() {
-    if (x1>=420 && x1<=450) {
-      println(x1);
-      println("Too short");      
+  void ball() {          
+    if (mousePressed) {
       y1-=1;
       fill(255);
       ellipse(300, y1, 10, 10);
-    } else if (x1>=451 && x1<=480) {
-      println(x1);
-      println("slightly short");
+    }
+  }
+  void ball2() {        
+    if (mousePressed) {
       y1-=2;
       fill(255);
       ellipse(300, y1, 10, 10);
-    } else if (x1>=481 && x1<=510) {
-      println(x1);
-      println("perfect!");
+    }
+  }
+  void ball3() {     
+    if (mousePressed) {
       y1-=3;
       fill(255);
       ellipse(300, y1, 10, 10);
-    } else if (x1>=511 && x1<=540) {
-      println(x1);
-      println("slightly long");
+    }
+  }
+  void ball4() {   
+    if (mousePressed) {
       y1-=4;
       fill(255);
       ellipse(300, y1, 10, 10);
-    } else if (x1>=541 && x1<=570) {
-      println(x1);
-      println("Too far");
+    }
+  }
+  void ball5() {     
+    if (mousePressed) {
       y1-=5;
       fill(255);
       ellipse(300, y1, 10, 10);
     }
   }
-  void ball() {    
-    y1-=1; 
-    fill(255);
-    ellipse(300, 670, 10, 10);
-
-    fill(255);
-    ellipse(300, y1, 10, 10);
+  void putt() {
+    if (x1>=420 && x1<=450) {
+      println(x1);
+      println("Too short");      
+      this.ball();
+    } else if (x1>=451 && x1<=480) {
+      println(x1);
+      println("slightly short");
+      this.ball2();
+    } else if (x1>=481 && x1<=510) {
+      println(x1);
+      println("perfect!");
+      this.ball3();
+    } else if (x1>=511 && x1<=540) {
+      println(x1);
+      println("slightly long");
+      this.ball4();
+    } else if (x1>=541 && x1<=570) {
+      println(x1);
+      println("Too far");
+      this.ball5();
+    }
   }
 }
