@@ -3,7 +3,11 @@ class Officehole {
   float y;
   float x1;
   int xspeed=5;
-  boolean bounce;   
+  boolean bounce; 
+  int yspeed=3;
+  int y1=670;
+  boolean P;
+
 
   public Officehole(float x, float y) {
     this.x=x;
@@ -67,16 +71,43 @@ class Officehole {
   }
   void putt() {
     if (x1>=420 && x1<=450) {
-      
+      println(x1);
+      println("Too short");      
+      y1-=1;
+      fill(255);
+      ellipse(300, y1, 10, 10);
     } else if (x1>=451 && x1<=480) {
-      
+      println(x1);
+      println("slightly short");
+      y1-=2;
+      fill(255);
+      ellipse(300, y1, 10, 10);
     } else if (x1>=481 && x1<=510) {
-      
+      println(x1);
+      println("perfect!");
+      y1-=3;
+      fill(255);
+      ellipse(300, y1, 10, 10);
     } else if (x1>=511 && x1<=540) {
-      
+      println(x1);
+      println("slightly long");
+      y1-=4;
+      fill(255);
+      ellipse(300, y1, 10, 10);
     } else if (x1>=541 && x1<=570) {
-      
+      println(x1);
+      println("Too far");
+      y1-=5;
+      fill(255);
+      ellipse(300, y1, 10, 10);
     }
   }
-  
+  void ball() {    
+    y1-=1; 
+    fill(255);
+    ellipse(300, 670, 10, 10);
+
+    fill(255);
+    ellipse(300, y1, 10, 10);
+  }
 }
