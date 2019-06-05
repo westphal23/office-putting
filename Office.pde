@@ -7,6 +7,7 @@ class Officehole {
   int yspeed=7;
   int y1=670;
   boolean P;
+  
 
 
   public Officehole(float x, float y) {
@@ -49,6 +50,10 @@ class Officehole {
     rect(420, 650, 30, 40); //redleft
     fill(0);
     rect(x1, 650, 10, 40);//black meter
+    circle();
+    if(gameOver==true){
+      println(" Game Over ");
+    }
   } 
   void move() {  
     if (x1>=560 && bounce!=true) {
@@ -63,46 +68,38 @@ class Officehole {
       x1+=xspeed;
     }
   } 
+  int getPosition() {
+    return y1;
+  }
   int getSpeed() {
     return xspeed;
   }
   void setSpeed(int s) {
     xspeed=s;
   }
+  void circle() {
+    fill(255);
+    ellipse(300, y1, 10, 10);
+  }
   void ball() {          
-    if (mousePressed) {
-      y1-=1;
-      fill(255);
-      ellipse(300, y1, 10, 10);
-    }
+
+    y1-=1;
   }
   void ball2() {        
-    if (mousePressed) {
-      y1-=2;
-      fill(255);
-      ellipse(300, y1, 10, 10);
-    }
+
+    y1-=2;
   }
   void ball3() {     
-    if (mousePressed) {
-      y1-=3;
-      fill(255);
-      ellipse(300, y1, 10, 10);
-    }
+
+    y1-=3;
   }
   void ball4() {   
-    if (mousePressed) {
-      y1-=4;
-      fill(255);
-      ellipse(300, y1, 10, 10);
-    }
+
+    y1-=4;
   }
   void ball5() {     
-    if (mousePressed) {
-      y1-=5;
-      fill(255);
-      ellipse(300, y1, 10, 10);
-    }
+
+    y1-=5;
   }
   void putt() {
     if (x1>=420 && x1<=450) {
