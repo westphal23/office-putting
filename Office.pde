@@ -92,19 +92,19 @@ void ball() {
 }
 void ball2() {        
 
-  y1-=2;
+  y1-=3;
 }
 void ball3() {     
 
-  y1-=3;
+  y1-=5;
 }
 void ball4() {   
 
-  y1-=4;
+  y1-=3;
 }
 void ball5() {     
 
-  y1-=5;
+  y1-=1;
 }
 void putt() {
   if (x1>=420 && x1<=450) {    
@@ -117,10 +117,10 @@ void putt() {
     println("perfect!");
     this.ball3();
   } else if (x1>=511 && x1<=540) {   
-    println("slightly long");
+    println("slightly short");
     this.ball4();
   } else if (x1>=541 && x1<=570) {    
-    println("Too far");
+    println("Too short");
     this.ball5();
   }
 }

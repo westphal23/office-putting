@@ -16,7 +16,7 @@ void setup() {
 }
 
 void draw() {   
-  
+
 
   background(150);
   if (!gameOver) {
@@ -38,7 +38,7 @@ void draw() {
         gameOver=true;
     if (Oh.getPosition()==120)
       gameWon=true;
-  }else{
+  } else {
     fill(0);
     textSize(50);
     text(" Game Over ", 170, 500);
@@ -49,9 +49,21 @@ void draw() {
     textSize(50);
     text("Strokes:", 180, 590);
   }
+  //}if(Oh.getPosition()==110){
+  //    gameWon=true;
+  //}
+  //if(gameWon){
+  //  fill(0);
+  //  textSize(50);
+  //  text(" You Did It! ", 170, 500);
+  //  fill(0);
+  //  textSize(50);
+  //  text("Strokes:", 180, 590);
+  //}
+    
 }
 
 void mousePressed() {  
-    strokes=strokes+1;        
-    m=false;
+  strokes=strokes+1;        
+  m=false;
 }
