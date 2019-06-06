@@ -3,11 +3,11 @@ float xspeed=5;
 boolean m = true;
 boolean doubleCheck= true;
 int count=0;
-int strokes;
 boolean hit=true;
 boolean gameOver=false;
 String text;
 boolean gameWon=false;
+int strokes=0;
 
 void setup() {
   size(600, 1200);
@@ -15,22 +15,10 @@ void setup() {
   text="";
 }
 
-void draw() {
-  if (gameOver) {      
-    fill(0);
-    textSize(30);    
-    text(" Game Over ", width/2, (height/2)-20);
+void draw() {   
+  
 
-    //gameOver=false;
-  }
-  //if (gameWon){
-  //  println("You Won!");
-  //}
-  fill(0);
-  textSize(30);
-  text(strokes, 100, 100);
-
-  background(100);
+  background(150);
   if (!gameOver) {
     Oh.display();
     if (m)
@@ -50,19 +38,20 @@ void draw() {
         gameOver=true;
     if (Oh.getPosition()==120)
       gameWon=true;
+  }else{
+    fill(0);
+    textSize(50);
+    text(" Game Over ", 170, 500);
+    fill(0);
+    textSize(50);
+    text(strokes, 400, 590);
+    fill(0);
+    textSize(50);
+    text("Strokes:", 180, 590);
   }
 }
 
-void mousePressed() {
-  strokes++;
-  m=false;
-}
-void keyPressed() {
-  if (key==CODED) {
-    //if(keyCode==UP)
-    //doubleCheck= true;
-    if (keyCode == DOWN) {
-      xspeed=5;
-    }
-  }
+void mousePressed() {  
+    strokes=strokes+1;        
+    m=false;
 }

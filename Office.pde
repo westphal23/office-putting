@@ -10,6 +10,7 @@ class Officehole {
   
 
 
+
   public Officehole(float x, float y) {
     this.x=x;
     this.y=y;
@@ -17,7 +18,7 @@ class Officehole {
     x1=420;
   }
   void display() {
-    //green-fairway
+  //green-fairway
     fill(0, 204, 0);
     rect(x, y, 200, 600);
     fill(0, 255, 51);
@@ -51,77 +52,76 @@ class Officehole {
     fill(0);
     rect(x1, 650, 10, 40);//black meter
     circle();
-    if(gameOver==true){
-      println(" Game Over ");
-    }
+    
   } 
-  void move() {  
-    if (x1>=560 && bounce!=true) {
-      bounce=true;
-    } else if (x1==420) {
-      bounce=false;
-    }
-    if (bounce==true) {
-      x1-=xspeed;
-    } else if (bounce==false)
-    {
-      x1+=xspeed;
-    }
-  } 
-  int getPosition() {
-    return y1;
-  }
-  int getSpeed() {
-    return xspeed;
-  }
-  void setSpeed(int s) {
-    xspeed=s;
-  }
-  void circle() {
-    fill(255);
-    ellipse(300, y1, 10, 10);
-  }
-  void ball() {          
+  //void display2() {
+  //  fill(0);
+  //  textSize(30);
+  //  text(" Game Over ", 200, 100);
+  //}
 
-    y1-=1;
+void move() {  
+  if (x1>=560 && bounce!=true) {
+    bounce=true;
+  } else if (x1==420) {
+    bounce=false;
   }
-  void ball2() {        
+  if (bounce==true) {
+    x1-=xspeed;
+  } else if (bounce==false)
+  {
+    x1+=xspeed;
+  }
+} 
+int getPosition() {
+  return y1;
+}
+int getSpeed() {
+  return xspeed;
+}
+void setSpeed(int s) {
+  xspeed=s;
+}
+void circle() {
+  fill(255);
+  ellipse(300, y1, 10, 10);
+}
+void ball() {          
 
-    y1-=2;
-  }
-  void ball3() {     
+  y1-=1;
+}
+void ball2() {        
 
-    y1-=3;
-  }
-  void ball4() {   
+  y1-=2;
+}
+void ball3() {     
 
-    y1-=4;
-  }
-  void ball5() {     
+  y1-=3;
+}
+void ball4() {   
 
-    y1-=5;
+  y1-=4;
+}
+void ball5() {     
+
+  y1-=5;
+}
+void putt() {
+  if (x1>=420 && x1<=450) {    
+    println("Too short");      
+    this.ball();
+  } else if (x1>=451 && x1<=480) {    
+    println("slightly short");
+    this.ball2();
+  } else if (x1>=481 && x1<=510) {    
+    println("perfect!");
+    this.ball3();
+  } else if (x1>=511 && x1<=540) {   
+    println("slightly long");
+    this.ball4();
+  } else if (x1>=541 && x1<=570) {    
+    println("Too far");
+    this.ball5();
   }
-  void putt() {
-    if (x1>=420 && x1<=450) {
-      println(x1);
-      println("Too short");      
-      this.ball();
-    } else if (x1>=451 && x1<=480) {
-      println(x1);
-      println("slightly short");
-      this.ball2();
-    } else if (x1>=481 && x1<=510) {
-      println(x1);
-      println("perfect!");
-      this.ball3();
-    } else if (x1>=511 && x1<=540) {
-      println(x1);
-      println("slightly long");
-      this.ball4();
-    } else if (x1>=541 && x1<=570) {
-      println(x1);
-      println("Too far");
-      this.ball5();
-    }
-  }
+}
 }
